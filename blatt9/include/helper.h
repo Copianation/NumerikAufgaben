@@ -12,6 +12,10 @@ double** initMatrix(int m, int n, double* A);
 
 void addTo(double* v1, double* v2, int size);
 
+void addMultipleTo(double* v1, double multiple, double* v2, int size);
+
+void multiple(double* v, double multiple, int size);
+
 // Store -v in neg_v
 void negative(double* v, double* neg_v, int size);
 

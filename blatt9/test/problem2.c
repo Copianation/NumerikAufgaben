@@ -1,4 +1,3 @@
-
 #include <math.h>
 #include "Broyden.h"
 
@@ -29,13 +28,14 @@ void testWithInitialVector(double* x0)
     // Let B0 be the Jacobian matrix at x0
     double** B0 = prob2Jacobian(x0);
 
+    printf(".......................\n");
+    printf("With x0 = ");
+    printVector(x0, 2);
+    printf("we have: ");
+
     // Flag indicates if the calculation is successful
     int flag = Broyden(2, problem2Func, x0, B0, 80, 1e-12, n);
 
-    printf(".......................\n");
-    printf("With x0 =");
-    printVector(x0, 2);
-    printf("we have: ");
     printf("flag = %i, steps = %i.\nThe zero point x = ", flag, *n);
     printVector(x0, 2);
     printf("To varify this is indeed a zero point, we have f(x) = ");
@@ -48,7 +48,6 @@ void main()
     double x0[2] = {-0.14, -1.47};
     testWithInitialVector(x0);
 
-    // Also need to try x0 = (-0.14, -1.47)
     double X0[2] = {-0.5, 1.4};
     testWithInitialVector(X0);
 

@@ -49,6 +49,22 @@ void addTo(double* v1, double* v2, int size)
     }
 }
 
+void addMultipleTo(double* v1, double multiple, double* v2, int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        v1[i] += multiple * v2[i];
+    }
+}
+
+void multiple(double* v, double multiple, int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        v[i] *= multiple;
+    }
+}
+
 double dot(double* v1, double* v2, int size)
 {
     double result = 0;
@@ -80,7 +96,7 @@ void printMatrix(double** M, int m, int n)
         printf("| ");
         for (int j = 0; j < n; ++j)
         {
-            printf("%f\t",M[i][j]);
+            printf("%.5g\t",M[i][j]);
         }
         printf("|\n");
     }
