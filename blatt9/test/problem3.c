@@ -89,7 +89,7 @@ void testWithInitialValues(double* x0, double** B0)
     free(n);
 }
 
-void main()
+int main()
 {
     double x0[2] = {-0.8, 0.2};
     double x1[2] = {-0.8, 0.2};
@@ -109,6 +109,12 @@ void main()
     testWithInitialValues(x2, B2);
     testWithInitialValues(x3, B3);
 
+    freeMatrix(2, 2, B0);
+    freeMatrix(2, 2, B1);
+    freeMatrix(2, 2, B2);
+    freeMatrix(2, 2, B3);
+
+    return 0;
 }
 
 /*

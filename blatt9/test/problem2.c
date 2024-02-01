@@ -41,9 +41,12 @@ void testWithInitialVector(double* x0)
     printf("To varify this is indeed a zero point, we have f(x) = ");
     printVector(problem2Func(x0), 2);
     printf(".......................\n");
+
+    free(n);
+    freeMatrix(2, 2, B0);
 }
 
-void main()
+int main()
 {
     double x0[2] = {-0.14, -1.47};
     testWithInitialVector(x0);
@@ -51,4 +54,5 @@ void main()
     double X0[2] = {-0.5, 1.4};
     testWithInitialVector(X0);
 
+    return 0;
 }

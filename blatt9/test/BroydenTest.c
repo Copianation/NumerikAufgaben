@@ -11,7 +11,7 @@ double* square(double* x)
     return output;
 }
 
-void main()
+int main()
 {
     double B_init[2][2] = {{1, 0}, {0, 1}};
     double** B = initMatrix(2 ,2 , (double*) B_init);
@@ -22,4 +22,8 @@ void main()
     printf("flag = %i, steps = %i\n", flag, *n);
     printVector(x, 2);
 
+    freeMatrix(B);
+    free(n);
+
+    return 0;
 }

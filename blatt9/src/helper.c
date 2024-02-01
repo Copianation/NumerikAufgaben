@@ -33,6 +33,15 @@ double** initMatrix(int m, int n, double* A)
     return matrix;
 }
 
+void freeMatrix(int m, int n, double** matrix)
+{
+    for (int row = 0; row < m; ++row)
+    {
+        free(matrix[row]);
+    }
+    free(matrix);
+}
+
 void negative(double* v, double* neg_v, int size)
 {
     for(int i = 0; i < size; ++i)
